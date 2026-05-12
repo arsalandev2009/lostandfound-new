@@ -1,0 +1,786 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+
+
+  </head>
+
+ <style>
+  * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.nav {
+  font-family: sans-serif;
+  background-color: white;
+  z-index: 999;
+  padding: 15px 50px;
+  /* border-bottom: 1px solid black; */
+  box-shadow: 0px 0px 05px 0px black;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  justify-content: space-between;
+}
+.nav-logo img {
+  width: 120px;
+}
+.nav-right {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  font-size: 22px;
+  width: 40%;
+  justify-content: center;
+}
+.nav-right a {
+  text-decoration: none;
+  color: black;
+}
+.nav-right a:hover {
+  color: rgb(8, 102, 179);
+  font-weight: bolder;
+}
+.items-container {
+  margin: 120px 0px 100px 0px;
+  padding: 20px 50px;
+  width: 100%;
+  display: grid;
+  /* grid-template-rows: 1fr 1fr 1fr; */
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+  gap: 50px;
+}
+.boxes {
+  /* border: 1px solid black; */
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px 0px rgb(124, 124, 124);
+  /* filter: drop-shadow(0px 0px 5px 0px black); */
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
+  /* padding: 20px; */
+  height: 400px;
+  gap: 20px;
+}
+.image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45%;
+  overflow: hidden;
+
+  width: 100%;
+  position: relative;
+}
+
+.image .lostORfound {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 15px;
+  font-family: sans-serif;
+  letter-spacing: 0.5px;
+  border-radius: 20px;
+  background-color: rgb(201, 5, 5);
+  padding: 3px 10px;
+  font-size: 16px;
+  color: white;
+}
+
+.title {
+  display: flex;
+  width: 100%;
+  padding: 0px 20px;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+}
+.description {
+  display: flex;
+
+  width: 100%;
+  padding: 0px 20px;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0.5px;
+  height: 20%;
+  overflow-y: scroll;
+}
+.description::-webkit-scrollbar {
+  width: 4px;
+}
+button {
+  padding: 8px 10px;
+  border: none;
+  color: white;
+  background-color: #0f62a5;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+button:hover {
+  transform: scale(1.03);
+}
+.footer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 18px;
+  box-shadow: 0px 0px 05px 0px black;
+  height: fit-content;
+  padding: 20px 0px 10px 0px;
+  color: white;
+  gap: 15px;
+  background: linear-gradient(135deg, #0f172a, #2b3c63);
+}
+.footer-upper {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.footer-left {
+  color: #a1bdff;
+}
+.footer-mid {
+  display: flex;
+  gap: 20px;
+}
+.footer-mid a {
+  text-decoration: none;
+  color: white;
+  border-bottom: 1px solid white;
+  transition: all 0.2s;
+}
+.footer-mid a:hover {
+  color: #a1bdff;
+  border-bottom: 1px solid #a1bdff;
+  transform: scale(1.1);
+}
+hr {
+  width: 95%;
+  border: none;
+  height: 1px;
+  background-color: rgb(114, 111, 111);
+  /* background-color: red; */
+}
+.footer-right {
+  color: rgb(204, 203, 203);
+}
+
+@media (min-width: 1280px) and (max-width: 1450px) {
+  .items-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .boxes {
+    height: 380px;
+  }
+  .image {
+    height: 40%;
+  }
+
+  .title {
+    display: flex;
+  }
+  .description {
+    height: 25%;
+  }
+
+  .footer {
+    flex-direction: column;
+    /* font-size: 15px; */
+    height: fit-content;
+    margin: 0;
+    padding: 15px 0px 10px 0px;
+    gap: 15px;
+  }
+  .footer-left {
+    color: #a1bdff;
+    font-size: 20px;
+  }
+  .footer-mid {
+    display: flex;
+    gap: 20px;
+  }
+  .footer-mid a {
+    color: white;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1279px) {
+  .nav {
+    height: 80px;
+  }
+  .nav-logo img {
+    width: 100px;
+  }
+  .nav-right {
+    gap: 20px;
+    font-size: 18px;
+    width: 45%;
+  }
+
+  .items-container {
+    margin: 110px 0px 100px 0px;
+    padding: 0px 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+  }
+  .boxes {
+    height: 350px;
+    gap: 08px;
+  }
+  .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48%;
+  }
+  .image .lostORfound {
+    margin: 10px;
+  }
+  .title {
+    font-size: 23px;
+  }
+  .description {
+    height: 23%;
+
+    overflow-y: scroll;
+  }
+  .description::-webkit-scrollbar {
+    width: 4px;
+  }
+  button {
+    letter-spacing: 0.5px;
+    font-size: 17px;
+  }
+
+  .footer {
+    flex-direction: column;
+    /* font-size: 15px; */
+    height: fit-content;
+    margin: 0;
+    padding: 15px 0px 10px 0px;
+    gap: 15px;
+  }
+  .footer-left {
+    color: #a1bdff;
+    font-size: 20px;
+  }
+  .footer-mid {
+    display: flex;
+    gap: 20px;
+  }
+  .footer-mid a {
+    color: white;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .nav {
+    padding: 1px;
+    gap: 50px;
+    height: 80px;
+    justify-content: space-around;
+  }
+  .nav-logo img {
+    width: 80px;
+  }
+  .nav-right {
+    gap: 15px;
+    width: 60%;
+    font-size: 16px;
+  }
+
+  .items-container {
+    margin: 110px 0px 100px 0px;
+    padding: 0px 20px;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+  .boxes {
+    height: 350px;
+    gap: 08px;
+  }
+  .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48%;
+  }
+  .image .lostORfound {
+    margin: 10px;
+    padding: 3px 10px;
+  }
+  .title {
+    font-size: 23px;
+  }
+  .description {
+    height: 23%;
+
+    overflow-y: scroll;
+  }
+  .description::-webkit-scrollbar {
+    width: 4px;
+  }
+  button {
+    letter-spacing: 0.5px;
+    font-size: 17px;
+  }
+  .footer {
+    flex-direction: column;
+    /* font-size: 15px; */
+    height: fit-content;
+    margin: 0;
+    padding: 15px 0px 10px 0px;
+    gap: 15px;
+  }
+  .footer-left {
+    color: #a1bdff;
+    font-size: 20px;
+  }
+  .footer-mid {
+    display: flex;
+    gap: 20px;
+  }
+  .footer-mid a {
+    color: white;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 301px) and (max-width: 480px) {
+  .nav {
+    /* flex-direction: column; */
+
+    justify-content: space-between;
+    gap: 5px;
+    padding: 1px;
+    height: 60px;
+  }
+  .nav-logo img {
+    width: 70px;
+    /* margin-top: -15px; */
+  }
+  .nav-right {
+    gap: 10px;
+    text-align: center;
+    width: 60%;
+    font-size: 15px;
+    align-items: start;
+  }
+
+  .items-container {
+    margin: 100px 0px 100px 0px;
+    padding: 0px 10px;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+  .boxes {
+    height: 280px;
+    gap: 8px;
+    overflow: hidden;
+  }
+  .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+  }
+  .image .lostORfound {
+    margin: 5px;
+    padding: 3px 08px;
+    font-size: 14px;
+  }
+  .title {
+    font-size: 20px;
+    padding: 0px 10px;
+  }
+  .description {
+    height: 22%;
+    padding: 0px 10px;
+    font-size: 12px;
+    overflow-y: scroll;
+  }
+  .description::-webkit-scrollbar {
+    width: 4px;
+  }
+  button {
+    padding: 5px 8px;
+    border: none;
+    color: white;
+    background-color: #0f62a5;
+    border-radius: 5px;
+    font-size: 13px;
+  }
+
+  .footer {
+    flex-direction: column;
+    /* font-size: 15px; */
+    height: fit-content;
+    margin: 0;
+    padding: 15px 0px 10px 0px;
+    gap: 15px;
+  }
+  .footer-upper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 90%;
+    gap: 15px;
+  }
+  .footer-left {
+    color: #a1bdff;
+    font-size: 20px;
+  }
+  .footer-mid {
+    display: flex;
+    gap: 20px;
+  }
+  .footer-mid a {
+    /* text-decoration: underline; */
+    color: white;
+    font-size: 16px;
+  }
+  .footer-right {
+    color: rgb(204, 203, 203);
+  }
+}
+
+ </style>
+
+  <body>
+
+    <div class="nav">
+      <div class="nav-logo">
+        <a href="#"><img src="./assets/logo-new.png" alt="" /></a>
+      </div>
+      <div class="nav-right">
+        <li><a href="#">Home</a></li>
+        <li><a href="report.html">Report Lost</a></li>
+        <li><a href="report.html">Report Found</a></li>
+      </div>
+    </div>
+
+    <div class="items-container" id="items-container">
+
+      <!-- <div class="boxes">
+        <div class="image">
+          <div class="lostORfound">Lost</div>
+          <img src="/assets/bag.png" alt="" />
+        </div>
+
+        <div class="title">
+          <p>Bag</p>
+        </div>
+
+        <div class="description">
+          <p>
+            ipsum dolor sit amet consectetur adipisicing elit. Amet repudiandae
+          </p>
+        </div>
+
+        <div class="button">
+          <button>Click for more details</button>
+        </div>
+      </div>
+
+      <div class="boxes">
+        <div class="image">
+          <div class="lostORfound">Lost</div>
+          <img src="/assets/bag.png" alt="" />
+        </div>
+
+        <div class="title">
+          <p>Bag</p>
+        </div>
+
+        <div class="description">
+          <p>
+            ipsum dolor sit amet consectetur adipisicing elit. Amet repudiandae
+          </p>
+        </div>
+
+        <div class="button">
+          <button>Click for more details</button>
+        </div>
+      </div>
+
+      <div class="boxes">
+        <div class="image">
+          <div class="lostORfound">Lost</div>
+          <img src="/assets/bag.png" alt="" />
+        </div>
+
+        <div class="title">
+          <p>Bag</p>
+        </div>
+
+        <div class="description">
+          <p>
+            ipsum dolor sit amet consectetur adipisicing elit. Amet repudiandae
+          </p>
+        </div>
+
+        <div class="button">
+          <button>Click for more details</button>
+        </div>
+      </div>
+
+      <div class="boxes">
+        <div class="image">
+          <div class="lostORfound">Lost</div>
+          <img src="/assets/bag.png" alt="" />
+        </div>
+
+        <div class="title">
+          <p>Bag</p>
+        </div>
+
+        <div class="description">
+          <p>
+            ipsum dolor sit amet consectetur adipisicing elit. Amet repudiandae
+          </p>
+        </div>
+
+        <div class="button">
+          <button>Click for more details</button>
+        </div>
+      </div>
+
+      <div class="boxes">
+        <div class="image">
+          <div class="lostORfound">Lost</div>
+          <img src="/assets/bag.png" alt="" />
+        </div>
+
+        <div class="title">
+          <p>Bag</p>
+        </div>
+
+        <div class="description">
+          <p>
+            ipsum dolor sit amet consectetur adipisicing elit. Amet repudiandae
+          </p>
+        </div>
+
+        <div class="button">
+          <button>Click for more details</button>
+        </div>
+      </div>
+
+      <div class="boxes">
+        <div class="image">
+          <div class="lostORfound">Lost</div>
+          <img src="/assets/bag.png" alt="" />
+        </div>
+
+        <div class="title">
+          <p>Bag</p>
+        </div>
+
+        <div class="description">
+          <p>
+            ipsum dolor sit amet consectetur adipisicing elit. Amet repudiandae
+          </p>
+        </div>
+
+        <div class="button">
+          <button>Click for more details</button>
+        </div>
+      </div>
+
+      <div class="boxes">
+        <div class="image">
+          <div class="lostORfound">Lost</div>
+          <img src="/assets/bag.png" alt="" />
+        </div>
+
+        <div class="title">
+          <p>Bag</p>
+        </div>
+
+        <div class="description">
+          <p>
+            ipsum dolor sit amet consectetur adipisicing elit. Amet repudiandae
+          </p>
+        </div>
+
+        <div class="button">
+          <button>Click for more details</button>
+        </div>
+      </div>
+
+      <div class="boxes">
+        <div class="image">
+          <div class="lostORfound">Lost</div>
+          <img src="/assets/bag.png" alt="" />
+        </div>
+
+        <div class="title">
+          <p>Bag</p>
+        </div>
+
+        <div class="description">
+          <p>
+            ipsum dolor sit amet consectetur adipisicing elit. Amet repudiandae
+          </p>
+        </div>
+
+        <div class="button">
+          <button>Click for more details</button>
+        </div>
+      </div>
+
+      <div class="boxes">
+        <div class="image">
+          <div class="lostORfound">Lost</div>
+          <img src="/assets/bag.png" alt="" />
+        </div>
+
+        <div class="title">
+          <p>Bag</p>
+        </div>
+
+        <div class="description">
+          <p>
+            ipsum dolor sit amet consectetur adipisicing elit. Amet repudiandae
+          </p>
+        </div>
+
+        <div class="button">
+          <button>Click for more details</button>
+        </div>
+      </div>
+
+      <div class="boxes">
+        <div class="image">
+          <div class="lostORfound">Lost</div>
+          <img src="/assets/bag.png" alt="" />
+        </div>
+
+        <div class="title">
+          <p>Bag</p>
+        </div>
+
+        <div class="description">
+          <p>
+            ipsum dolor sit amet consectetur adipisicing elit. Amet repudiandae
+          </p>
+        </div>
+
+        <div class="button">
+          <button>Click for more details</button>
+        </div>
+      </div>
+
+      <div class="boxes">
+        <div class="image">
+          <div class="lostORfound">Lost</div>
+          <img src="/assets/bag.png" alt="" />
+        </div>
+
+        <div class="title">
+          <p>Bag</p>
+        </div>
+
+        <div class="description">
+          <p>
+            ipsum dolor sit amet consectetur adipisicing elit. Amet repudiandae
+          </p>
+        </div>
+
+        <div class="button">
+          <button>Click for more details</button>
+        </div>
+      </div>
+
+      <div class="boxes">
+        <div class="image">
+          <div class="lostORfound">Lost</div>
+          <img src="/assets/bag.png" alt="" />
+        </div>
+
+        <div class="title">
+          <p>Bag</p>
+        </div>
+
+        <div class="description">
+          <p>
+            ipsum dolor sit amet consectetur adipisicing elit. Amet repudiandae
+          </p>
+        </div>
+
+        <div class="button">
+          <button>Click for more details</button>
+        </div>
+      </div>
+
+      <div class="boxes">
+        <div class="image">
+          <div class="lostORfound">Lost</div>
+          <img src="/assets/bag.png" alt="" />
+        </div>
+
+        <div class="title">
+          <p>Bag</p>
+        </div>
+
+        <div class="description">
+          <p>
+            ipsum dolor sit amet consectetur adipisicing elit. Amet repudiandae
+          </p>
+        </div>
+
+        <div class="button">
+          <button>Click for more details</button>
+        </div>
+      </div> -->
+   
+    </div>
+
+    <div class="footer">
+      <div class="footer-upper">
+        <div class="footer-left">
+          <h2 class="logo">Lost & Found</h2>
+        </div>
+        <div class="footer-mid">
+          <a href="#">Home</a>
+          <a href="report.html">Report</a>
+          <a href="#">Contact Us</a>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="footer-right">
+        <p class="copy">© 2026 All Rights Reserved</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+
+  </body>
+</html>
