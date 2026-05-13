@@ -336,7 +336,7 @@ if (detail && lostitem && founditem) {
              <input type="date" name="" id="" />
            </div>
          </div>
-         <h3 class="container-headings">Upload Image (Optional)</h3>
+         <h3 class="container-headings">Upload Image *</h3>
          <input type="file" style="height:60px;"/>
          <div class="content2">
            <h3 class="container-headings">Contact Information</h3>
@@ -346,8 +346,8 @@ if (detail && lostitem && founditem) {
                <input type="text" placeholder="e.g. john"/>
              </div>
              <div class="content2-inner-2">
-               <h3 class="container-headings">Email address *</h3>
-               <input type="email" placeholder="e.g. abc123@gmail.com" />
+               <h3 class="container-headings">Your active number *</h3>
+               <input type="number" placeholder="e.g. +92 123 4567890" />
              </div>
            </div>
          </div>
@@ -392,7 +392,7 @@ function lost() {
              <input type="date" name="" id="" />
            </div>
          </div>
-         <h3 class="container-headings">Upload Image (Optional)</h3>
+         <h3 class="container-headings">Upload Image *</h3>
          <input type="file" style="height:60px;"/>
          <div class="content2">
            <h3 class="container-headings">Contact Information</h3>
@@ -402,8 +402,8 @@ function lost() {
                <input type="text" placeholder="e.g. john"/>
              </div>
              <div class="content2-inner-2">
-               <h3 class="container-headings">Email address *</h3>
-               <input type="email" placeholder="e.g. abc123@gmail.com" />
+               <h3 class="container-headings">Your active number *</h3>
+               <input type="number" placeholder="e.g. +92 123 4567890" />
              </div>
            </div>
          </div>
@@ -448,7 +448,7 @@ function found() {
              <input type="date" name="" id="" />
            </div>
          </div>
-         <h3 class="container-headings">Upload Image (Optional)</h3>
+         <h3 class="container-headings">Upload Image *</h3>
          <input type="file" style="height:60px;"/>
          <div class="content2">
            <h3 class="container-headings">Contact Information</h3>
@@ -458,8 +458,8 @@ function found() {
                <input type="text" placeholder="e.g. john"/>
              </div>
              <div class="content2-inner-2">
-               <h3 class="container-headings">Email address *</h3>
-               <input type="email" placeholder="e.g. abc123@gmail.com"/>
+               <h3 class="container-headings">Your active number *</h3>
+               <input type="number" placeholder="e.g. +92 123 4567890"/>
              </div>
            </div>
          </div>
