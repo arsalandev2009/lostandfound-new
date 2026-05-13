@@ -537,7 +537,7 @@ if (itemscontainer) {
             <div class="lostORfound" style="background-color:${item.type === "Lost" ? "red" : "green"};">
               ${item.type}
             </div>
-            <img src="/assets/bag.png" alt="" />
+            <img src="./assets/bag.png" alt="" />
           </div>
 
           <div class="title">
